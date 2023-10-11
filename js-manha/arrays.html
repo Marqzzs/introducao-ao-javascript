@@ -1,21 +1,70 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-    
+  </head>
+  <body>
     <script>
-        let frutas = ['Banana', 'Maca', 'Melancia']
+      let frutas = ["banana", "maçã", "morango"];
 
-        console.log(frutas);
+      console.log(frutas);
+      console.log(`Quantidade de frutas: ${frutas.length}`);
 
-        frutas.push('Mamao')
+      frutas.push("uva");
+      frutas.push("mamão");
+      frutas.push("amora");
 
-        console.log(frutas);
+      console.log(`Quantidade de frutas: ${frutas.length}`);
+
+      frutas.sort(); //ordena os valores do array
+
+      console.log();
+      console.log();
+
+      console.log(frutas[0]); //amora
+      console.log(frutas[2]); //mamao
+      console.log(frutas[5]); //uva
+      console.log(frutas[6]); //undefined
+
+      for (let index = 0; index < frutas.length; index++) {
+        console.log(`Fruta${index + 1} ${frutas[index]}`);
+      }
+
+      frutas.forEach(function (fruta, i) {
+        console.log(`fruta${i + 1} ${fruta}`);
+      });
+
+    //   for (let i = frutas.length - 1; i >= 0; i--) {
+    //     console.log(`fruta${frutas.length - i} ${frutas[i]}`);
+    //   }
+
+    //   // Classificar o array em ordem alfabética
+    //   frutas.sort();
+
+    //   frutas.forEach(function (fruta, i) {
+    //     console.log(`fruta${i + 1} ${fruta}`);
+    //   });
+
+    let prateleira = ['Guarana', 'Coca-Cola', 'Pepsi']
+
+    let bebida = prateleira[2]
+
+    switch (bebida) {
+        case 'Guarana':
+           console.log("Toma aqui seu guarana"); 
+            break;
+        case 'Coca-Cola':
+           console.log("Toma aqui sua coca"); 
+            break;
+        case 'Pepsi':
+           console.log("Toma aqui sua pepsi"); 
+            break;
+        default:
+            console.log(`Nao temos essa bebida (${bebida})`);
+            break;
+    }
     </script>
-</body>
+  </body>
 </html>
