@@ -1,25 +1,58 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
   <body>
     <script>
+      const url = "https://viacep.com.br/ws/09930290/json";
+
       //get
-      const retorno = fetch("https://viacep.com.br/ws/09274040/json/")
-        .then((Response) => {//promisse resolvida
-          console.log(Response);//objeto cheio de coisas
-          return Response.json();//retorna os dados
-        })
-        .then((dados) => {//os dados do corpo da promise the object!
+      // fetch(url)
+      //   .then((resposta) => {
+      //     //objeto promise resolvido (headers, body, others)
+      //     return resposta.json();
+      //   })
+      //   .then((dados) => {
+      //       console.log(dados);
+      //       console.log();
+            
+      //       console.log(`
+      //           Endreço:  ${dados.logradouro}
+      //           Cidade: ${dados.localidade}
+      //           Estado: ${dados.uf}
+      //       `);
+      //   })
+      //   .catch((e) => {
+      //        console.log(`Deu ruim: ${e.TypeError}`);
+      //       console.log(e);
+      //   });
+
+      async function chamarApi(endereco) {
+        try {
+          const promise = await fetch(endereco)
+          const dados = await promise.json()
           console.log(dados);
-        })
-        .catch((e) => {
+        } catch (error) {
           console.log("Deu ruim");
-        });
+        }
+      }
+
+      chamarApi(url)
+
+
+      // .then((resp)=>{//promise resolvida
+      //     console.log(resp);//objeto cheio de coisas
+      //     return resp.json();//retorna os dados
+      // })
+      // .then( (dados) => {//os dados do corpo da promise the object!
+      //     console.log(dados);
+      // })
+      // .catch((e)=>{
+      //     console.log("Deu ruim!");
+      // })
     </script>
   </body>
 </html>
